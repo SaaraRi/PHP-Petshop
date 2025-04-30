@@ -122,6 +122,7 @@ include "petshop.php";
                     <input type="number" name="age" />
                 </div>
                 <input type="submit" value="Submit" id="submit-btn" />
+                <?php if (!empty($message)): ?> <p class="error"> <?php echo $message; ?> </p> <?php endif; ?>
             </form>
         </div>
         <h2>Meet Our Loyal Customers</h2>

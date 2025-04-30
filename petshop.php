@@ -2,45 +2,34 @@
 
 declare(strict_types=1);
 
-
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-
-    $name = $_POST['name'] ?? "";
-    $age = $_POST['age'] ?? "";
+    $name = trim($_POST['name'] ?? "");
+    $age = trim($_POST['age'] ?? "");
     $pet_type = $_POST['pet_type'] ?? "";
 
+    if ($name !== "" && $age !== "" && is_numeric($age)) {
+        switch ($pet_type) {
+            case 'dog':
+                $pet = new Dog($name, (int)$age);
+                array_push($_SESSION['pets'], $pet);
+                break;
+            case 'cat':
+                $pet = new Cat($name, (int)$age);
+                array_push($_SESSION['pets'], $pet);
+                break;
+            case 'bird':
+                $pet = new Bird($name, (int)$age);
+                array_push($_SESSION['pets'], $pet);
+                break;
+            default:
+                $message = "Please select a valid pet type.";
+        }
 
-    switch ($pet_type) {
-        case 'dog':
-            $pet = new Dog($name, $age);
-            array_push($_SESSION['pets'], $pet);
-
-            //$pets[] = $pet;
-            //$pet->sayHello();
-            //$pet->petMessage();
-            break;
-        case 'cat':
-            $pet = new Cat($name, $age);
-            array_push($_SESSION['pets'], $pet);
-
-            //$pets[] = $pet;
-            //$pet->sayHello();
-            //$pet->petMessage();
-            break;
-        case 'bird':
-            $pet = new Bird($name, $age);
-            array_push($_SESSION['pets'], $pet);
-            //$pets[] = $pet;
-            //$pet->sayHello();
-            //$pet->petMessage();
-            break;
-        default:
-            $message = "Please input pet data";
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        $message = "Please fill out all fields with valid data.";
     }
-
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
 }
