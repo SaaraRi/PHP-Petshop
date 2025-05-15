@@ -94,9 +94,9 @@ include "petshop.php";
 <head>
     <meta charset="UTF-8">
     <title>Pet Shop</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Bubblegum+Sans&family=Cal+Sans&family=Candal&family=Caprasimo&family=Carter+One&family=Chela+One&family=Chewy&family=Coiny&family=Concert+One&family=Dangrek&family=Dongle&family=Englebert&family=Fredoka:wght@300..700&family=Give+You+Glory&family=Gorditas:wght@400;700&family=Grandstander:ital,wght@0,100..900;1,100..900&family=Happy+Monkey&family=Jua&family=Klee+One&family=Knewave&family=Mitr:wght@200;300;400;500;600;700&family=Pacifico&family=Passion+One:wght@400;700;900&family=Playpen+Sans:wght@100..800&family=Poetsen+One&family=Protest+Strike&family=Quicksand:wght@300..700&family=Rum+Raisin&family=Sniglet:wght@400;800&family=Spicy+Rice&family=Titan+One&family=Trade+Winds&family=Wendy+One&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="icons8-paw-ios-17-filled-32.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Knewave&family=Rammetto+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
